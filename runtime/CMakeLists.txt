@@ -42,12 +42,12 @@ set(LIB_DIR     "${CMAKE_INSTALL_PREFIX}/lib")
 
 ###############################################################################
 
-include_directories(${CMAKE_BINARY_DIR})
+include_directories(${CMAKE_BINARY_DIR}/third_party/smith)
 
 # Build and install the static library.
 
 add_library(libcsmith_a STATIC
-  ${CMAKE_BINARY_DIR}/config.h
+  ${CMAKE_BINARY_DIR}/third_party/csmith/config.h
   volatile_runtime.c
   volatile_runtime.h
   )
@@ -62,7 +62,7 @@ install(TARGETS libcsmith_a
 # Build and install the shared library.
 
 add_library(libcsmith_so SHARED
-  ${CMAKE_BINARY_DIR}/config.h
+  ${CMAKE_BINARY_DIR}/third_party/csmith/config.h
   volatile_runtime.c
   volatile_runtime.h
   )

@@ -44,7 +44,7 @@ include_directories(${CMAKE_BINARY_DIR})
 include_directories(${PROJECT_SOURCE_DIR}) # needed for gen'ed .cpp files
 
 set(csmith_SOURCES
-  ${CMAKE_BINARY_DIR}/config.h
+  ${CMAKE_BINARY_DIR}/third_party/csmith/config.h
   AbsExtension.cpp
   AbsExtension.h
   AbsProgramGenerator.cpp
