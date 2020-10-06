@@ -213,6 +213,9 @@ set_target_properties(csmith PROPERTIES
   CXX_STANDARD 14
   CXX_EXTENSIONS NO
   )
+target_include_directories(csmith PRIVATE
+  "${CMAKE_BINARY_DIR}/third_party/csmith"
+)
 # CXX_STANDARD_REQUIRED YES
 
 if(BSD_LIBRARY)

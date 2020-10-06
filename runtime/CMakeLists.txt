@@ -52,6 +52,9 @@ add_library(libcsmith_a STATIC
   volatile_runtime.h
   )
 set_target_properties(libcsmith_a PROPERTIES OUTPUT_NAME "csmith")
+target_include_directories(libcsmith_a PRIVATE
+  "${CMAKE_BINARY_DIR}/third_party/csmith"
+)
 
 install(TARGETS libcsmith_a
   ARCHIVE DESTINATION "${LIB_DIR}"
@@ -70,6 +73,9 @@ set_target_properties(libcsmith_so PROPERTIES OUTPUT_NAME "csmith")
 # Set library build and API versions to mimic what the Automake-based path
 # installs (for Linux).  This is probably not very useful.
 set_target_properties(libcsmith_so PROPERTIES VERSION 0.0.0 SOVERSION 0)
+target_include_directories(libcsmith_so PRIVATE
+  "${CMAKE_BINARY_DIR}/third_party/csmith"
+)
 
 # Linux, OS X, FreeBSD et al. look for the LIBRARY specification.
 # Windows ("DLL platforms") looks for the RUNTIME specification.
